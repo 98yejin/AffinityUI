@@ -1,23 +1,38 @@
 import React from "react";
-import { Table } from "./components/Table";
+import { Menu } from "./components/Menu";
 
 const App: React.FC = () => {
-  const columns = [
-    { key: "name", label: "Name", sortable: true },
-    { key: "age", label: "Age", sortable: true },
-    { key: "email", label: "Email", sortable: false },
+  const menuItems = [
+    {
+      label: "Home",
+      key: "home",
+    },
+    {
+      label: "Services",
+      key: "services",
+      items: [
+        { label: "Consulting", key: "consulting" },
+        { label: "Development", key: "development" },
+        { label: "Design", key: "design" },
+      ],
+    },
+    {
+      label: "About Us",
+      key: "about",
+    },
+    {
+      label: "Contact",
+      key: "contact",
+    },
   ];
 
-  const data = [
-    { name: "John Doe", age: 25, email: "john@example.com" },
-    { name: "Jane Smith", age: 30, email: "jane@example.com" },
-    { name: "Sam Johnson", age: 22, email: "sam@example.com" },
-    // ...more rows
-  ];
+  const handleSelect = (key: string) => {
+    console.log(`Selected: ${key}`);
+  };
 
   return (
     <div style={{ padding: "20px" }}>
-      <Table columns={columns} data={data} rowsPerPage={3} />
+      <Menu menuItems={menuItems} onSelect={handleSelect} />
     </div>
   );
 };
