@@ -1,9 +1,9 @@
 import React, { FC, useState, ReactNode } from "react";
 import {
   AccordionContainer,
-  AccordionItem,
-  AccordionHeader,
   AccordionContent,
+  AccordionHeader,
+  AccordionItem,
 } from "./Accordion.styles";
 
 interface AccordionProps {
