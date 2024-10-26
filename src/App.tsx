@@ -1,19 +1,35 @@
-import React from "react";
-import { MultiSelect } from "./components/MultiSelect";
+import React, { useState } from "react";
+import { Modal } from "./components/Modal";
+import { Button } from "./components/Button";
 
 const App: React.FC = () => {
-  const handleMultiSelectChange = (values: string[]) => {
-    console.log("Selected values:", values);
-  };
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
   return (
     <div>
-      <MultiSelect
-        options={["Option 1", "Option 2", "Option 3", "Option 4"]}
-        placeholder="Select up to 2 options"
-        maxSelections={2}
-        onChange={handleMultiSelectChange}
-      />
+      <Button onClick={openModal}>Open Modal with Border</Button>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title="Modal with Border"
+      >
+        <p>This modal has a border under the header.</p>
+      </Modal>
+
+      <Button onClick={() => setModalOpen(true)}>
+        Open Modal without Border
+      </Button>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title="No Border"
+        border={false}
+      >
+        <p>This modal does not have a border under the header.</p>
+      </Modal>
     </div>
   );
 };
