@@ -1,20 +1,24 @@
-import React from "react";
-import { Accordion, AccordionPanel } from "./components/Accordion";
+import React, { useState } from "react";
+import { Notification } from "./components/Notification";
 
 const App: React.FC = () => {
+  const [showNotification, setShowNotification] = useState(true);
+
+  const handleClose = () => {
+    setShowNotification(false);
+  };
+
   return (
     <div>
-      <Accordion multiExpand={true}>
-        <AccordionPanel title="Panel 1">
-          <p>This is the content of Panel 1.</p>
-        </AccordionPanel>
-        <AccordionPanel title="Panel 2">
-          <p>This is the content of Panel 2.</p>
-        </AccordionPanel>
-        <AccordionPanel title="Panel 3">
-          <p>This is the content of Panel 3.</p>
-        </AccordionPanel>
-      </Accordion>
+      {showNotification && (
+        <Notification
+          message="This is a success message!"
+          type="success"
+          onClose={handleClose}
+          autoDismiss={true}
+          autoDismissTime={1000}
+        />
+      )}
     </div>
   );
 };

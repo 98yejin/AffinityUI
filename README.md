@@ -10,19 +10,19 @@
 - Tooltip (info popups)
 - Popover (clickable info popups)
 - Dropdown (for menus)
+- Accordion
+- Alert (info, warning, error)
+- Notification (toast-style notifications)
 - Checkbox (with group support)
 - Radio Button (with group support)
 - Form (with validation support)
 - Card (content container)
 - Table (with pagination, sorting)
-- Alert (info, warning, error)
-- Notification (toast-style notifications)
 - Breadcrumb (navigation aid)
 - Pagination (for content navigation)
 - Menu (navigation menu with nested items)
 - Avatar (profile picture component)
 - Loading Spinner (for loading states)
-- Accordion
 
 ## Themes
 
