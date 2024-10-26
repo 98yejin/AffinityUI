@@ -1,24 +1,13 @@
-import React, { useState } from "react";
-import { Notification } from "./components/Notification";
+import React from "react";
+import { ProgressBar } from "./components/ProgressBar";
 
 const App: React.FC = () => {
-  const [showNotification, setShowNotification] = useState(true);
-
-  const handleClose = () => {
-    setShowNotification(false);
-  };
-
   return (
     <div>
-      {showNotification && (
-        <Notification
-          message="This is a success message!"
-          type="success"
-          onClose={handleClose}
-          autoDismiss={true}
-          autoDismissTime={1000}
-        />
-      )}
+      <h3>Task Progress</h3>
+      <ProgressBar value={70} label="70%" color="primary" />
+      <ProgressBar value={45} label="45%" color="warning" />
+      <ProgressBar value={100} label="Completed" color="success" />
     </div>
   );
 };
