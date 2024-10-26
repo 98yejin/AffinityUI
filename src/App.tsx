@@ -1,37 +1,23 @@
 import React from "react";
-import { Form } from "./components/Form";
+import { Table } from "./components/Table";
 
 const App: React.FC = () => {
-  const handleSubmit = (formData: { [key: string]: string }) => {
-    console.log("Form submitted:", formData);
-  };
+  const columns = [
+    { key: "name", label: "Name", sortable: true },
+    { key: "age", label: "Age", sortable: true },
+    { key: "email", label: "Email", sortable: false },
+  ];
+
+  const data = [
+    { name: "John Doe", age: 25, email: "john@example.com" },
+    { name: "Jane Smith", age: 30, email: "jane@example.com" },
+    { name: "Sam Johnson", age: 22, email: "sam@example.com" },
+    // ...more rows
+  ];
 
   return (
     <div style={{ padding: "20px" }}>
-      <Form
-        fields={[
-          { name: "username", label: "Username", type: "text", required: true },
-          {
-            name: "email",
-            label: "Email",
-            type: "email",
-            required: true,
-            validation: (value) =>
-              !/\S+@\S+\.\S+/.test(value) ? "Invalid email address" : null,
-          },
-          {
-            name: "password",
-            label: "Password",
-            type: "password",
-            required: true,
-            validation: (value) =>
-              value.length < 6
-                ? "Password must be at least 6 characters"
-                : null,
-          },
-        ]}
-        onSubmit={handleSubmit}
-      />
+      <Table columns={columns} data={data} rowsPerPage={3} />
     </div>
   );
 };
