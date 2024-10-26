@@ -1,19 +1,36 @@
-import React, { useState } from "react";
-import { RadioButton, RadioButtonGroup } from "./components/RadioButton";
+import React from "react";
+import { Form } from "./components/Form";
 
 const App: React.FC = () => {
-  const [selectedValue, setSelectedValue] = useState("option1");
+  const handleSubmit = (formData: { [key: string]: string }) => {
+    console.log("Form submitted:", formData);
+  };
 
   return (
     <div style={{ padding: "20px" }}>
-      <RadioButtonGroup
-        options={[
-          { label: "Option 1", value: "option1" },
-          { label: "Option 2", value: "option2", disabled: true },
-          { label: "Option 3", value: "option3" },
+      <Form
+        fields={[
+          { name: "username", label: "Username", type: "text", required: true },
+          {
+            name: "email",
+            label: "Email",
+            type: "email",
+            required: true,
+            validation: (value) =>
+              !/\S+@\S+\.\S+/.test(value) ? "Invalid email address" : null,
+          },
+          {
+            name: "password",
+            label: "Password",
+            type: "password",
+            required: true,
+            validation: (value) =>
+              value.length < 6
+                ? "Password must be at least 6 characters"
+                : null,
+          },
         ]}
-        selectedValue={selectedValue}
-        onChange={setSelectedValue}
+        onSubmit={handleSubmit}
       />
     </div>
   );
