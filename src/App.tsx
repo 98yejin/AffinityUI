@@ -1,10 +1,18 @@
 import React from "react";
-import { Avatar } from "./components/Avatar";
+import { Breadcrumb } from "./components/Breadcrumb";
 
 const App: React.FC = () => {
   return (
-    <div style={{ display: "flex", gap: "20px", padding: "20px" }}>
-      <Avatar initials="CD" size="small" />
+    <div style={{ padding: "20px" }}>
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Products", href: "/products" },
+          { label: "Electronics", href: "/products/electronics" },
+          { label: "Mobile Phones" },
+        ]}
+        separator=">"
+      />
     </div>
   );
 };
