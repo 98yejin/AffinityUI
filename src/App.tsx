@@ -1,17 +1,18 @@
 import React from "react";
-import { Dropdown } from "./components/Dropdown";
+import { MultiSelect } from "./components/MultiSelect";
 
 const App: React.FC = () => {
-  const handleSelect = (value: string) => {
-    console.log("Selected value:", value);
+  const handleMultiSelectChange = (values: string[]) => {
+    console.log("Selected values:", values);
   };
 
   return (
     <div>
-      <Dropdown
-        options={["Option 1", "Option 2", "Option 3"]}
-        placeholder="Choose an option"
-        onSelect={handleSelect}
+      <MultiSelect
+        options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+        placeholder="Select up to 2 options"
+        maxSelections={2}
+        onChange={handleMultiSelectChange}
       />
     </div>
   );
