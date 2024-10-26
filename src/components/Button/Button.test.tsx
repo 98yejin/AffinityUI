@@ -26,9 +26,9 @@ describe("Button Component", () => {
     expect(buttonElement).toHaveStyle("background-color: #007bff");
   });
 
-  it("should apply secondary variant styles", () => {
-    render(<Button variant="secondary">Secondary Button</Button>);
-    const buttonElement = screen.getByText(/secondary button/i);
+  it("should apply default variant styles", () => {
+    render(<Button variant="default">Default Button</Button>);
+    const buttonElement = screen.getByText(/default button/i);
     expect(buttonElement).toHaveStyle("background-color: #6c757d");
   });
 });

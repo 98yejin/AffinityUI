@@ -27,7 +27,10 @@ function App() {
         <ThemeSelector />
         <div style={{ padding: "20px" }}>
           {/* Button Component */}
-          <Button>Primary Button</Button>
+          <Button variant="primary">primary button</Button>
+          <Button variant="default">default button</Button>
+          <Button variant="text">text button</Button>
+          <Button variant="link">link button</Button>
 
           {/* Card Component */}
           <Card
