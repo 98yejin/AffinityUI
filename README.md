@@ -13,10 +13,10 @@
 - Accordion
 - Alert (info, warning, error)
 - Notification (toast-style notifications)
+- Card (content container)
 - Checkbox (with group support)
 - Radio Button (with group support)
 - Form (with validation support)
-- Card (content container)
 - Table (with pagination, sorting)
 - Breadcrumb (navigation aid)
 - Pagination (for content navigation)

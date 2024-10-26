@@ -1,18 +1,16 @@
 import React from "react";
-import { Badge } from "./components/Badge";
+import { Card } from "./components/Card";
 
 const App: React.FC = () => {
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100px",
-        height: "100px",
-        background: "#f0f0f0",
-        margin: "50px",
-      }}
-    >
-      <Badge content={500} variant="error" position="top-right" />
+    <div style={{ padding: "20px", display: "flex", gap: "20px" }}>
+      <Card
+        header="Card Header"
+        body={<p>This is the card body content.</p>}
+        footer={<button>Learn More</button>}
+        imageUrl="https://via.placeholder.com/300"
+      />
+      <Card body={<p>Another card without an image or footer.</p>} />
     </div>
   );
 };
