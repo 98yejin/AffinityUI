@@ -1,12 +1,16 @@
-import styled from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 
 export const MenuContainer = styled.div`
   width: 100%;
   max-width: 280px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid
+    ${({ theme }: { theme: DefaultTheme }) => theme?.colors?.border || "#ddd"};
+  border-radius: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.borderRadius || "4px"};
+  background-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.colors?.background || "#ffffff"};
+  box-shadow: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.boxShadow || "0 4px 8px rgba(0, 0, 0, 0.1)"};
   padding: 8px 0;
 `;
 
@@ -19,20 +23,24 @@ export const MenuItem = styled.div<MenuItemProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  border-radius: 4px;
+  background-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.colors?.background || "#fff"};
+  border-radius: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.borderRadius || "4px"};
   transition: background-color 0.3s ease;
   cursor: pointer;
 
   &:hover {
-    background-color: #f5f5f5;
+    background-color: ${({ theme }: { theme: DefaultTheme }) =>
+      theme?.colors?.hoverBackground || "#f5f5f5"};
   }
 
   ${({ level }) =>
     level > 0 &&
     `
     padding-left: ${level * 16 + 16}px;
-    background-color: #fafafa;
+    background-color: ${({ theme }: { theme: DefaultTheme }) =>
+      theme?.colors?.nestedBackground || "#fafafa"};
   `}
 `;
 
@@ -43,21 +51,28 @@ export const MenuItemWrapper = styled.div`
 export const MenuLabel = styled.span`
   font-weight: 500;
   font-size: 16px;
-  color: #333;
+  color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.colors?.text || "#333"};
 `;
 
 export const SubMenuContainer = styled.div`
   padding-left: 0;
-  background-color: #f6f8fa;
-  border-radius: 4px;
+  background-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.colors?.submenuBackground || "#f6f8fa"};
+  border-radius: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.borderRadius || "4px"};
 `;
 
 export const ExpandIcon = styled.span<{ isExpanded: boolean }>`
   display: inline-block;
   width: 10px;
   height: 10px;
-  border-left: 2px solid #007bff;
-  border-bottom: 2px solid #007bff;
+  border-left: 2px solid
+    ${({ theme }: { theme: DefaultTheme }) =>
+      theme?.colors?.primary || "#007bff"};
+  border-bottom: 2px solid
+    ${({ theme }: { theme: DefaultTheme }) =>
+      theme?.colors?.primary || "#007bff"};
   transform: ${({ isExpanded }) =>
     isExpanded ? "rotate(45deg)" : "rotate(-45deg)"};
   transition: transform 0.3s ease;

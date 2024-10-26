@@ -12,9 +12,13 @@ export const RadioButtonInput = styled.input`
   height: 16px;
   margin-right: 8px;
   cursor: pointer;
+  accent-color: ${({ theme }) => theme?.colors?.primary || "#007bff"};
 `;
 
 export const RadioButtonLabel = styled.span<{ disabled: boolean }>`
   font-size: 14px;
-  color: ${({ disabled }) => (disabled ? "#aaa" : "#333")};
+  color: ${({ disabled, theme }) =>
+    disabled
+      ? theme?.colors?.disabledText || "#aaa"
+      : theme?.colors?.text || "#333"};
 `;

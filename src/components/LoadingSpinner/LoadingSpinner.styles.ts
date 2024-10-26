@@ -7,7 +7,7 @@ const spin = keyframes`
 
 interface SpinnerProps {
   size: "small" | "medium" | "large";
-  color: string;
+  color?: string;
 }
 
 const sizeMap = {
@@ -27,7 +27,8 @@ export const Spinner = styled.div<SpinnerProps>`
   width: ${({ size }) => sizeMap[size]};
   height: ${({ size }) => sizeMap[size]};
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid ${({ color }) => color};
+  border-top: 4px solid
+    ${({ color, theme }) => color || theme?.colors?.primary || "#007bff"};
   border-radius: 50%;
   animation: ${spin} 1s linear infinite;
 `;

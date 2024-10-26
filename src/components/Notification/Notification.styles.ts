@@ -10,25 +10,26 @@ export const NotificationContainer = styled.div<NotificationContainerProps>`
   justify-content: space-between;
   padding: 16px;
   margin-bottom: 16px;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme?.borderRadius || "4px"};
   color: #fff;
-  background-color: ${({ type }) => {
+  background-color: ${({ type, theme }) => {
     switch (type) {
       case "success":
-        return "#28a745";
+        return theme?.colors?.success || "#28a745";
       case "error":
-        return "#dc3545";
+        return theme?.colors?.error || "#dc3545";
       case "warning":
-        return "#ffc107";
+        return theme?.colors?.warning || "#ffc107";
       case "info":
       default:
-        return "#007bff";
+        return theme?.colors?.info || "#007bff";
     }
   }};
 `;
 
 export const NotificationMessage = styled.div`
   flex-grow: 1;
+  color: ${({ theme }) => theme?.colors?.text || "#fff"};
 `;
 
 export const CloseButton = styled.button`
@@ -40,6 +41,6 @@ export const CloseButton = styled.button`
   margin-left: 16px;
 
   &:hover {
-    color: #e0e0e0;
+    color: ${({ theme }) => theme?.colors?.hoverText || "#e0e0e0"};
   }
 `;

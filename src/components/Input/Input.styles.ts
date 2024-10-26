@@ -11,30 +11,32 @@ export const Label = styled.label`
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #333;
+  color: ${({ theme }) => theme?.colors?.text || "#333"};
 `;
 
 export const StyledInput = styled.input`
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid ${({ theme }) => theme?.colors?.border || "#ccc"};
+  border-radius: ${({ theme }) => theme?.borderRadius || "6px"};
   transition: all 0.3s ease-in-out;
   animation: ${fadeIn} 0.5s ease-out;
 
   &:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: ${({ theme }) => theme?.colors?.primary || "#007bff"};
+    box-shadow: 0 0 5px
+      ${({ theme }) => theme?.colors?.primary || "rgba(0, 123, 255, 0.5)"};
     outline: none;
   }
 
   &:disabled {
-    background-color: #f5f5f5;
+    background-color: ${({ theme }) =>
+      theme?.colors?.disabledBackground || "#f5f5f5"};
     cursor: not-allowed;
   }
 
   &.error {
-    border-color: #dc3545;
+    border-color: ${({ theme }) => theme?.colors?.error || "#dc3545"};
   }
 `;

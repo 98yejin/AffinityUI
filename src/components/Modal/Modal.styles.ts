@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, DefaultTheme } from "styled-components";
 
 const fadeIn = keyframes`
   from {
@@ -25,9 +25,12 @@ export const ModalContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.colors?.background || "#fff"};
+  border-radius: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.borderRadius || "8px"};
+  box-shadow: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.boxShadow || "0 4px 16px rgba(0, 0, 0, 0.2)"};
   width: 500px;
   max-width: 90%;
   animation: ${fadeIn} 0.3s ease-out;
@@ -43,7 +46,13 @@ export const ModalHeader = styled.div<ModalHeaderProps>`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  border-bottom: ${({ border }) => (border ? "1px solid #e0e0e0" : "none")};
+  border-bottom: ${({
+    border,
+    theme,
+  }: {
+    border?: boolean;
+    theme: DefaultTheme;
+  }) => (border ? `1px solid ${theme?.colors?.border || "#e0e0e0"}` : "none")};
 
   h2 {
     margin: 0;
@@ -57,7 +66,9 @@ export const ModalBody = styled.div`
 
 export const ModalFooter = styled.div`
   padding: 16px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid
+    ${({ theme }: { theme: DefaultTheme }) =>
+      theme?.colors?.border || "#e0e0e0"};
   display: flex;
   justify-content: flex-end;
 `;
@@ -67,9 +78,11 @@ export const CloseButton = styled.button`
   border: none;
   cursor: pointer;
   font-size: 24px;
-  color: #aaa;
+  color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme?.colors?.textSecondary || "#aaa"};
 
   &:hover {
-    color: #333;
+    color: ${({ theme }: { theme: DefaultTheme }) =>
+      theme?.colors?.text || "#333"};
   }
 `;

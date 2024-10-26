@@ -3,7 +3,7 @@ import styled from "styled-components";
 interface AvatarContainerProps {
   size: "small" | "medium" | "large";
   shape: "circle" | "square";
-  backgroundColor: string;
+  backgroundColor?: string;
 }
 
 const sizeMap = {
@@ -15,11 +15,13 @@ const sizeMap = {
 export const AvatarContainer = styled.div<AvatarContainerProps>`
   width: ${({ size }) => sizeMap[size]};
   height: ${({ size }) => sizeMap[size]};
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ backgroundColor, theme }) =>
+    backgroundColor || theme.colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: ${({ shape }) => (shape === "circle" ? "50%" : "8px")};
+  border-radius: ${({ shape, theme }) =>
+    shape === "circle" ? "50%" : theme?.borderRadius || "8px"};
   font-size: ${({ size }) =>
     size === "small" ? "14px" : size === "medium" ? "18px" : "24px"};
   color: #fff;

@@ -11,10 +11,10 @@ interface TooltipTextProps {
 
 export const TooltipText = styled.div<TooltipTextProps>`
   position: absolute;
-  background: #333;
-  color: #fff;
+  background: ${({ theme }) => theme?.colors?.tooltipBackground || "#333"};
+  color: ${({ theme }) => theme?.colors?.tooltipText || "#fff"};
   padding: 8px;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme?.borderRadius || "4px"};
   font-size: 14px;
   white-space: nowrap;
   opacity: 0;

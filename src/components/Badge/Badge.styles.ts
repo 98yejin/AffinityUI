@@ -11,17 +11,17 @@ export const BadgeContainer = styled.div<BadgeContainerProps>`
   font-size: 12px;
   border-radius: 12px;
   color: #fff;
-  background-color: ${({ variant }) => {
+  background-color: ${({ variant, theme }) => {
     switch (variant) {
       case "success":
-        return "#28a745";
+        return theme?.colors?.success || "#28a745";
       case "warning":
-        return "#ffc107";
+        return theme?.colors?.warning || "#ffc107";
       case "error":
-        return "#dc3545";
+        return theme?.colors?.error || "#dc3545";
       case "default":
       default:
-        return "#6c757d";
+        return theme?.colors?.default || "#6c757d";
     }
   }};
   position: absolute;

@@ -11,16 +11,17 @@ export const InputWrapper = styled.div`
 
 export const DropdownHeader = styled.div`
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid ${({ theme }) => theme?.colors?.border || "#ccc"};
+  border-radius: ${({ theme }) => theme?.borderRadius || "6px"};
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   animation: ${fadeIn} 0.5s ease-out;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme?.colors?.background || "#fff"};
 
   &:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: ${({ theme }) => theme?.colors?.primary || "#007bff"};
+    box-shadow: 0 0 5px
+      ${({ theme }) => theme?.colors?.primary || "rgba(0, 123, 255, 0.5)"};
     outline: none;
   }
 `;
@@ -33,10 +34,11 @@ export const DropdownList = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  border: 1px solid ${({ theme }) => theme?.colors?.border || "#ccc"};
+  border-radius: ${({ theme }) => theme?.borderRadius || "6px"};
+  box-shadow: ${({ theme }) =>
+    theme?.boxShadow || "0 4px 8px rgba(0, 0, 0, 0.1)"};
+  background-color: ${({ theme }) => theme?.colors?.background || "#fff"};
   max-height: 200px;
   overflow-y: auto;
   z-index: 1;
@@ -51,7 +53,8 @@ export const DropdownItem = styled.li<{ disabled?: boolean }>`
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 
   &:hover {
-    background-color: ${({ disabled }) => (disabled ? "none" : "#f0f0f0")};
+    background-color: ${({ disabled, theme }) =>
+      disabled ? "none" : theme?.colors?.hoverBackground || "#f0f0f0"};
   }
 
   input {
@@ -62,17 +65,22 @@ export const DropdownItem = styled.li<{ disabled?: boolean }>`
 export const Tag = styled.span`
   display: inline-flex;
   align-items: center;
-  background-color: #e0e0e0;
+  background-color: ${({ theme }) => theme?.colors?.tagBackground || "#e0e0e0"};
   padding: 5px 10px;
   margin: 5px;
-  border-radius: 12px;
+  border-radius: ${({ theme }) => theme?.borderRadius || "12px"};
+  color: ${({ theme }) => theme?.colors?.text || "#333"};
 `;
 
 export const RemoveTagButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  color: #333;
+  color: ${({ theme }) => theme?.colors?.text || "#333"};
   margin-left: 5px;
   font-size: 16px;
+
+  &:hover {
+    color: ${({ theme }) => theme?.colors?.primary || "#007bff"};
+  }
 `;

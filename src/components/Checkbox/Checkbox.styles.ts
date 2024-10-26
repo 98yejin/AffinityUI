@@ -15,5 +15,5 @@ export const CheckboxInput = styled.input`
 
 export const CheckboxLabel = styled.span`
   font-size: 14px;
-  color: #333;
+  color: ${({ theme }) => theme?.colors?.text || "#333"};
 `;

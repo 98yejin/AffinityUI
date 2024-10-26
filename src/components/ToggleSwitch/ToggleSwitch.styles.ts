@@ -6,8 +6,8 @@ interface ToggleContainerProps {
 
 interface SliderProps {
   size: "small" | "medium" | "large";
-  onColor: string;
-  offColor: string;
+  onColor?: string;
+  offColor?: string;
   isChecked: boolean;
 }
 
@@ -49,8 +49,10 @@ export const Slider = styled.span<SliderProps>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${({ isChecked, onColor, offColor }) =>
-    isChecked ? onColor : offColor};
+  background-color: ${({ isChecked, onColor, offColor, theme }) =>
+    isChecked
+      ? onColor || theme?.colors?.primary || "#007bff"
+      : offColor || theme?.colors?.border || "#ccc"};
   transition: 0.4s;
   border-radius: ${({ size }) => (size === "small" ? "10px" : "17px")};
 
@@ -64,7 +66,7 @@ export const Slider = styled.span<SliderProps>`
         ? `calc(${sizeMap[size].width} - ${sizeMap[size].slider} - 2px)`
         : "2px"};
     bottom: 2px;
-    background-color: white;
+    background-color: ${({ theme }) => theme?.colors?.toggleKnob || "white"};
     transition: 0.4s;
     border-radius: 50%;
   }

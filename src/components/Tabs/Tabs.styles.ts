@@ -6,7 +6,7 @@ export const TabsContainer = styled.div`
 
 export const TabsHeader = styled.div`
   display: flex;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid ${({ theme }) => theme?.colors?.border || "#ccc"};
 `;
 
 interface TabProps {
@@ -20,11 +20,15 @@ export const Tab = styled.button<TabProps>`
   border: none;
   font-size: 16px;
   transition: color 0.3s, border-bottom 0.3s;
-  border-bottom: ${({ active }) => (active ? "2px solid #007bff" : "none")};
-  color: ${({ active }) => (active ? "#007bff" : "#555")};
+  border-bottom: ${({ active, theme }) =>
+    active ? `2px solid ${theme?.colors?.primary || "#007bff"}` : "none"};
+  color: ${({ active, theme }) =>
+    active
+      ? theme?.colors?.primary || "#007bff"
+      : theme?.colors?.textSecondary || "#555"};
 
   &:hover {
-    color: #007bff;
+    color: ${({ theme }) => theme?.colors?.primary || "#007bff"};
   }
 `;
 

@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const AccordionContainer = styled.div`
   width: 100%;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.primary}20;
+  border-radius: ${({ theme }) => theme.borderRadius};
 `;
 
 export const AccordionItem = styled.div`
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid ${({ theme }) => theme.colors.primary}20;
 
   &:first-child {
     border-top: none;
@@ -16,18 +16,18 @@ export const AccordionItem = styled.div`
 
 export const AccordionHeader = styled.div`
   padding: 16px;
-  background-color: #f9f9f9;
+  background-color: ${({ theme }) => theme.colors.background}20;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #e9e9e9;
+    background-color: ${({ theme }) => theme.colors.primary}10;
   }
 `;
 
 export const AccordionContent = styled.div`
   padding: 16px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.background};
   animation: slideDown 0.3s ease;
 
   @keyframes slideDown {
