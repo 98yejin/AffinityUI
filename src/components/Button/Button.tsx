@@ -14,7 +14,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <StyledButton variant={variant} onClick={onClick} {...props}>
+    <StyledButton onClick={onClick} {...props}>
       {children}
     </StyledButton>
   );
