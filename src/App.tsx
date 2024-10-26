@@ -1,21 +1,26 @@
 import React, { useState } from "react";
-import { ToggleSwitch } from "./components/ToggleSwitch";
+import { Checkbox, CheckboxGroup } from "./components/Checkbox";
 
 const App: React.FC = () => {
-  const [isToggled, setIsToggled] = useState(false);
-
-  const handleToggle = () => {
-    setIsToggled((prev) => !prev);
-  };
+  const [isSingleChecked, setIsSingleChecked] = useState(false);
+  const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
   return (
     <div style={{ padding: "20px" }}>
-      <ToggleSwitch
-        isChecked={isToggled}
-        onChange={handleToggle}
-        size="large"
-        onColor="#4caf50"
-        offColor="#ccc"
+      <Checkbox
+        label="Single Checkbox"
+        isChecked={isSingleChecked}
+        onChange={() => setIsSingleChecked((prev) => !prev)}
+      />
+
+      <CheckboxGroup
+        options={[
+          { label: "Option 1", value: "option1" },
+          { label: "Option 2", value: "option2" },
+          { label: "Option 3", value: "option3" },
+        ]}
+        selectedValues={selectedValues}
+        onChange={setSelectedValues}
       />
     </div>
   );
