@@ -1,14 +1,10 @@
 import React from "react";
-import { SearchBar } from "./components/SearchBar";
+import { PasswordInput } from "./components/PasswordInput";
 
 const App: React.FC = () => {
-  const handleSearch = (value: string) => {
-    console.log("Search value:", value);
-  };
-
   return (
     <div>
-      <SearchBar placeholder="Search here..." onSearch={handleSearch} />
+      <PasswordInput placeholder="Enter your password" />
     </div>
   );
 };
