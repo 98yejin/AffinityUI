@@ -1,38 +1,33 @@
-import React from "react";
-import { Menu } from "./components/Menu";
+// App.tsx
+import React, { useState, useEffect } from "react";
+import { LoadingSpinner } from "./components/LoadingSpinner";
 
 const App: React.FC = () => {
-  const menuItems = [
-    {
-      label: "Home",
-      key: "home",
-    },
-    {
-      label: "Services",
-      key: "services",
-      items: [
-        { label: "Consulting", key: "consulting" },
-        { label: "Development", key: "development" },
-        { label: "Design", key: "design" },
-      ],
-    },
-    {
-      label: "About Us",
-      key: "about",
-    },
-    {
-      label: "Contact",
-      key: "contact",
-    },
-  ];
+  const [loading, setLoading] = useState(true);
 
-  const handleSelect = (key: string) => {
-    console.log(`Selected: ${key}`);
-  };
+  useEffect(() => {
+    // Simulate a data fetching process
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <Menu menuItems={menuItems} onSelect={handleSelect} />
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {loading ? (
+        <LoadingSpinner size="small" color="#007bff" />
+      ) : (
+        <h1>Content Loaded!</h1>
+      )}
     </div>
   );
 };
