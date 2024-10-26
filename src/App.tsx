@@ -1,13 +1,18 @@
 import React from "react";
-import { ProgressBar } from "./components/ProgressBar";
+import { Badge } from "./components/Badge";
 
 const App: React.FC = () => {
   return (
-    <div>
-      <h3>Task Progress</h3>
-      <ProgressBar value={70} label="70%" color="primary" />
-      <ProgressBar value={45} label="45%" color="warning" />
-      <ProgressBar value={100} label="Completed" color="success" />
+    <div
+      style={{
+        position: "relative",
+        width: "100px",
+        height: "100px",
+        background: "#f0f0f0",
+        margin: "50px",
+      }}
+    >
+      <Badge content={500} variant="error" position="top-right" />
     </div>
   );
 };
