@@ -1,22 +1,20 @@
 import React from "react";
-import { Tooltip } from "./components/Tooltip";
-import { Button } from "./components/Button";
+import { Accordion, AccordionPanel } from "./components/Accordion";
 
 const App: React.FC = () => {
   return (
     <div>
-      <Tooltip content="This is a tooltip" position="bottom">
-        <Button>Hover over me</Button>
-      </Tooltip>
-
-      <Tooltip
-        content={
-          <span style={{ color: "yellow" }}>Custom Tooltip Content</span>
-        }
-        position="right"
-      >
-        <Button>Custom Tooltip</Button>
-      </Tooltip>
+      <Accordion multiExpand={true}>
+        <AccordionPanel title="Panel 1">
+          <p>This is the content of Panel 1.</p>
+        </AccordionPanel>
+        <AccordionPanel title="Panel 2">
+          <p>This is the content of Panel 2.</p>
+        </AccordionPanel>
+        <AccordionPanel title="Panel 3">
+          <p>This is the content of Panel 3.</p>
+        </AccordionPanel>
+      </Accordion>
     </div>
   );
 };

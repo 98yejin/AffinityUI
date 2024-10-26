@@ -8,6 +8,8 @@
 - Tabs (for navigation)
 - Modal (dialog box)
 - Tooltip (info popups)
+- Popover (clickable info popups)
+- Dropdown (for menus)
 - Checkbox (with group support)
 - Radio Button (with group support)
 - Form (with validation support)
@@ -15,13 +17,12 @@
 - Table (with pagination, sorting)
 - Alert (info, warning, error)
 - Notification (toast-style notifications)
-- Dropdown (for menus)
-- Popover (clickable info popups)
 - Breadcrumb (navigation aid)
 - Pagination (for content navigation)
 - Menu (navigation menu with nested items)
 - Avatar (profile picture component)
 - Loading Spinner (for loading states)
+- Accordion
 
 ## Themes
 
