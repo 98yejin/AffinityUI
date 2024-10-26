@@ -14,6 +14,7 @@
 - Alert (info, warning, error)
 - Notification (toast-style notifications)
 - Card (content container)
+- Avatar (profile picture component)
 - Checkbox (with group support)
 - Radio Button (with group support)
 - Form (with validation support)
@@ -21,7 +22,6 @@
 - Breadcrumb (navigation aid)
 - Pagination (for content navigation)
 - Menu (navigation menu with nested items)
-- Avatar (profile picture component)
 - Loading Spinner (for loading states)
 
 ## Themes
