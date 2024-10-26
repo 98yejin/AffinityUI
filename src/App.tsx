@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Pagination } from "./Pagination";
+import { ToggleSwitch } from "./components/ToggleSwitch";
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 10;
+  const [isToggled, setIsToggled] = useState(false);
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+  const handleToggle = () => {
+    setIsToggled((prev) => !prev);
   };
 
   return (
     <div style={{ padding: "20px" }}>
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-        paginationSize={5}
+      <ToggleSwitch
+        isChecked={isToggled}
+        onChange={handleToggle}
+        size="large"
+        onColor="#4caf50"
+        offColor="#ccc"
       />
     </div>
   );
