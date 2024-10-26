@@ -1,26 +1,19 @@
 import React, { useState } from "react";
-import { Checkbox, CheckboxGroup } from "./components/Checkbox";
+import { RadioButton, RadioButtonGroup } from "./components/RadioButton";
 
 const App: React.FC = () => {
-  const [isSingleChecked, setIsSingleChecked] = useState(false);
-  const [selectedValues, setSelectedValues] = useState<string[]>([]);
+  const [selectedValue, setSelectedValue] = useState("option1");
 
   return (
     <div style={{ padding: "20px" }}>
-      <Checkbox
-        label="Single Checkbox"
-        isChecked={isSingleChecked}
-        onChange={() => setIsSingleChecked((prev) => !prev)}
-      />
-
-      <CheckboxGroup
+      <RadioButtonGroup
         options={[
           { label: "Option 1", value: "option1" },
-          { label: "Option 2", value: "option2" },
+          { label: "Option 2", value: "option2", disabled: true },
           { label: "Option 3", value: "option3" },
         ]}
-        selectedValues={selectedValues}
-        onChange={setSelectedValues}
+        selectedValue={selectedValue}
+        onChange={setSelectedValue}
       />
     </div>
   );
