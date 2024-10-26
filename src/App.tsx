@@ -1,17 +1,21 @@
-import React from "react";
-import { Breadcrumb } from "./components/Breadcrumb";
+import React, { useState } from "react";
+import { Pagination } from "./Pagination";
 
 const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 10;
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div style={{ padding: "20px" }}>
-      <Breadcrumb
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Products", href: "/products" },
-          { label: "Electronics", href: "/products/electronics" },
-          { label: "Mobile Phones" },
-        ]}
-        separator=">"
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+        paginationSize={5}
       />
     </div>
   );

@@ -16,11 +16,11 @@
 - Card (content container)
 - Avatar (profile picture component)
 - Breadcrumb (navigation aid)
+- Pagination (for content navigation)
 - Checkbox (with group support)
 - Radio Button (with group support)
 - Form (with validation support)
 - Table (with pagination, sorting)
-- Pagination (for content navigation)
 - Menu (navigation menu with nested items)
 - Loading Spinner (for loading states)
 
