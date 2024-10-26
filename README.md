@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Company
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Core Components
 
-## Available Scripts
+- Button (primary, secondary, icon buttons, etc.)
+- Input (text input, password input, search bar)
+- Select (dropdown menu, multi-select)
+- Checkbox (with group support)
+- Radio Button (with group support)
+- Modal (dialog box)
+- Form (with validation support)
+- Card (content container)
+- Table (with pagination, sorting)
+- Tabs (for navigation)
+- Tooltip (info popups)
+- Alert (info, warning, error)
+- Notification (toast-style notifications)
+- Dropdown (for menus)
+- Popover (clickable info popups)
+- Breadcrumb (navigation aid)
+- Pagination (for content navigation)
+- Menu (navigation menu with nested items)
+- Avatar (profile picture component)
+- Loading Spinner (for loading states)
 
-In the project directory, you can run:
+## Themes
 
-### `npm start`
+Supporting custom themes for companies that have a strong focus on UX and UI is a fantastic idea.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Apple
+  - Famous for its clean and intuitive design, focusing heavily on user experience.
+- Google
+  - Known for its Material Design system, which sets standards for consistency and usability.
+- Microsoft
+  - Fluent Design is their design language that prioritizes flexibility and depth, making it appealing to a broad user base.
+- Airbnb
+  - With a strong focus on aesthetics and usability, Airbnb has a highly refined design system called "DLS" (Design Language System).
+- Spotify
+  - Spotify’s design is centered around music experience, focusing on intuitive navigation and personalization.
+- Uber
+  - Uber places a strong emphasis on clarity and accessibility, ensuring a good experience across its diverse user base.
+- Notion
+  - Known for its minimalist yet powerful UI, ideal for productivity and customization, focusing on both aesthetics and functionality.
+- Stripe
+  - Has an excellent UI for both developers and end-users, with a clean, professional feel that’s ideal for fintech applications.
+- Netflix
+  - Their UI is optimized for engagement and ease of use, making it highly user-friendly across different devices.
+- Figma
+  - Figma's design language is very clear and collaborative, with components that focus on ease of use and real-time interactions.
