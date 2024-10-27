@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { getHighContrastColor } from "../../utils/stylesUtils";
 
 export const PaginationContainer = styled.div`
   display: flex;
@@ -26,6 +27,10 @@ export const PageItem = styled.button<PageItemProps>`
       active
         ? theme?.colors?.hoverPrimary || "#0056b3"
         : theme?.colors?.hoverBackground || "#e9ecef"};
+    color: ${({ active, theme }) =>
+      active
+        ? getHighContrastColor(theme?.colors?.hoverPrimary || "#0056b3")
+        : getHighContrastColor(theme?.colors?.hoverBackground || "#e9ecef")};
   }
 
   &:disabled {
