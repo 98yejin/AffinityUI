@@ -29,6 +29,7 @@ function App() {
       <MockHeader />
       <ThemeSelector />
       <MockCard />
+
       <div style={{ padding: "20px" }}>
         <div style={{ padding: "20px" }}>
           {/* Button Component */}
@@ -42,7 +43,6 @@ function App() {
             header="Card Header"
             body={<p>This is the card body content.</p>}
             footer={<Button>Learn More</Button>}
-            imageUrl="https://via.placeholder.com/300"
           />
           <Card body={<p>Another card without an image or footer.</p>} />
 

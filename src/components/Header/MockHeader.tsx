@@ -2,56 +2,59 @@ import React from "react";
 import Header from "./Header";
 import { useTheme } from "../../themes";
 
-const HeaderWithTheme: React.FC = () => {
+const MockHeader: React.FC = () => {
   const { themeName } = useTheme();
 
   const getHeaderProps = (themeName: string) => {
     switch (themeName) {
       case "apple":
         return {
-          logoText: "Apple",
+          logoText: "DesignApple",
           navItems: ["Home", "Products", "Support", "Contact"],
         };
       case "google":
         return {
-          logoText: "Google",
+          logoText: "DesignGoogle",
           navItems: ["Home", "Services", "Docs", "Contact"],
         };
       case "microsoft":
         return {
-          logoText: "Microsoft",
+          logoText: "DesignMicrosoft",
           navItems: ["Home", "Software", "Enterprise", "Contact"],
         };
       case "airbnb":
         return {
-          logoText: "Airbnb",
+          logoText: "DesignAirbnb",
           navItems: ["Home", "Explore", "Host", "Contact"],
         };
       case "spotify":
         return {
-          logoText: "Spotify",
+          logoText: "DesignSpotify",
           navItems: ["Home", "Music", "Premium", "Support"],
         };
       case "uber":
-        return { logoText: "Uber", navItems: ["Home", "Rides", "Eat", "Help"] };
+        return {
+          logoText: "DesignUber",
+          navItems: ["Home", "Rides", "Eat", "Help"],
+        };
       case "notion":
         return {
-          logoText: "Notion",
+          logoText: "DesignNotion",
           navItems: ["Home", "Features", "Pricing", "Blog"],
         };
       case "stripe":
         return {
-          logoText: "Stripe",
+          logoText: "DesignStripe",
           navItems: ["Home", "Pricing", "Docs", "Support"],
         };
       case "netflix":
         return {
-          logoText: "Netflix",
+          logoText: "DesignNetflix",
           navItems: ["Home", "TV Shows", "Movies", "Help"],
         };
       case "figma":
         return {
-          logoText: "Figma",
+          logoText: "DesignFigma",
           navItems: ["Home", "Design", "Enterprise", "Community"],
         };
       default:
@@ -67,4 +70,4 @@ const HeaderWithTheme: React.FC = () => {
   return <Header {...headerProps} />;
 };
 
-export default HeaderWithTheme;
+export default MockHeader;
