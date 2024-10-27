@@ -15,6 +15,11 @@ export const themes = {
     borderRadius: "8px",
     font: "San Francisco, Arial, sans-serif",
     boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
+    header: {
+      logoFontSize: "24px",
+      navGap: "24px",
+      navItemFontSize: "18px",
+    },
   },
   google: {
     colors: {
@@ -32,6 +37,11 @@ export const themes = {
     borderRadius: "4px",
     font: "Roboto, Arial, sans-serif",
     boxShadow: "0 2px 5px rgba(0,0,0,0.15)",
+    header: {
+      logoFontSize: "22px",
+      navGap: "20px",
+      navItemFontSize: "16px",
+    },
   },
   microsoft: {
     colors: {
@@ -49,6 +59,11 @@ export const themes = {
     borderRadius: "2px",
     font: "Segoe UI, Arial, sans-serif",
     boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+    header: {
+      logoFontSize: "24px",
+      navGap: "20px",
+      navItemFontSize: "18px",
+    },
   },
   airbnb: {
     colors: {
@@ -66,6 +81,11 @@ export const themes = {
     borderRadius: "12px",
     font: "Circular, Arial, sans-serif",
     boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+    header: {
+      logoFontSize: "26px",
+      navGap: "28px",
+      navItemFontSize: "20px",
+    },
   },
   spotify: {
     colors: {
@@ -83,6 +103,11 @@ export const themes = {
     borderRadius: "8px",
     font: "Spotify Circular, Arial, sans-serif",
     boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
+    header: {
+      logoFontSize: "28px",
+      navGap: "24px",
+      navItemFontSize: "18px",
+    },
   },
   uber: {
     colors: {
@@ -100,6 +125,11 @@ export const themes = {
     borderRadius: "6px",
     font: "Uber Move, Arial, sans-serif",
     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+    header: {
+      logoFontSize: "20px",
+      navGap: "16px",
+      navItemFontSize: "16px",
+    },
   },
   notion: {
     colors: {
@@ -117,6 +147,11 @@ export const themes = {
     borderRadius: "4px",
     font: "Inter, Arial, sans-serif",
     boxShadow: "none",
+    header: {
+      logoFontSize: "24px",
+      navGap: "20px",
+      navItemFontSize: "18px",
+    },
   },
   stripe: {
     colors: {
@@ -134,6 +169,11 @@ export const themes = {
     borderRadius: "4px",
     font: "Stripe Sans, Arial, sans-serif",
     boxShadow: "0 0 8px rgba(50,50,93,0.1)",
+    header: {
+      logoFontSize: "22px",
+      navGap: "18px",
+      navItemFontSize: "16px",
+    },
   },
   netflix: {
     colors: {
@@ -151,6 +191,11 @@ export const themes = {
     borderRadius: "0",
     font: "Helvetica Neue, Arial, sans-serif",
     boxShadow: "0 2px 5px rgba(0,0,0,0.5)",
+    header: {
+      logoFontSize: "28px",
+      navGap: "24px",
+      navItemFontSize: "20px",
+    },
   },
   figma: {
     colors: {
@@ -168,5 +213,10 @@ export const themes = {
     borderRadius: "8px",
     font: "Gotham, Arial, sans-serif",
     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+    header: {
+      logoFontSize: "26px",
+      navGap: "22px",
+      navItemFontSize: "18px",
+    },
   },
 };

@@ -17,12 +17,15 @@ import { SearchBar } from "./components/SearchBar";
 import { TabPane, Tabs } from "./components/Tabs";
 import { AppThemeProvider } from "./themes";
 import ThemeSelector from "./ThemeSelector";
+import { MockHeader } from "./components/Header";
 
 function App() {
   const [isSingleChecked, setIsSingleChecked] = useState(false);
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
+
   return (
     <AppThemeProvider>
+      <MockHeader />
       <div style={{ padding: "20px" }}>
         <ThemeSelector />
         <div style={{ padding: "20px" }}>
