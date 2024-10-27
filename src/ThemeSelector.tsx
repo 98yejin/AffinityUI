@@ -7,10 +7,7 @@ const ThemeSelector: React.FC = () => {
   const { themeName, setThemeName } = useTheme();
 
   return (
-    <Space
-      direction="vertical"
-      style={{ alignItems: "center", padding: "10%" }}
-    >
+    <Space direction="vertical" style={{ alignItems: "center", padding: "5%" }}>
       <Space direction="horizontal">
         <Button type="primary" onClick={() => setThemeName("apple")}>
           Apple

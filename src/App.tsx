@@ -19,6 +19,8 @@ import { AppThemeProvider } from "./themes";
 import ThemeSelector from "./ThemeSelector";
 import { MockHeader } from "./components/Header";
 import MockCard from "./components/Card/MockCard";
+import CompanyPrinciples from "./components/CompanyPrinciple";
+import { Layout } from "./components/Layout";
 
 function App() {
   const [isSingleChecked, setIsSingleChecked] = useState(false);
@@ -27,10 +29,12 @@ function App() {
   return (
     <AppThemeProvider>
       <MockHeader />
-      <ThemeSelector />
-      <MockCard />
-
-      <div style={{ padding: "20px" }}>
+      <Layout>
+        <CompanyPrinciples />
+        <ThemeSelector />
+        <div style={{ alignItems: "end" }}>
+          <MockCard />
+        </div>
         <div style={{ padding: "20px" }}>
           {/* Button Component */}
           <Button type="primary">primary button</Button>
@@ -184,7 +188,7 @@ function App() {
             rowsPerPage={5}
           />
         </div>
-      </div>
+      </Layout>
     </AppThemeProvider>
   );
 }
