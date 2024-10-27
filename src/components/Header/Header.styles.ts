@@ -67,7 +67,7 @@ export const MobileMenu = styled.div`
 export const NavItem = styled.div`
   font-size: 16px;
   font-family: ${({ theme }) => theme.font};
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => getHighContrastColor(theme.colors.primary)};
   cursor: pointer;
   transition: color 0.3s;
 
