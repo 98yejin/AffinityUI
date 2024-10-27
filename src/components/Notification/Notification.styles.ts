@@ -29,7 +29,7 @@ export const NotificationContainer = styled.div<NotificationContainerProps>`
 
 export const NotificationMessage = styled.div`
   flex-grow: 1;
-  color: ${({ theme }) => theme?.colors?.text || "#fff"};
+  color: ${({ theme }) => theme?.colors?.hoverText || "#fff"};
 `;
 
 export const CloseButton = styled.button`

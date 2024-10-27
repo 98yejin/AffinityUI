@@ -1,17 +1,5 @@
 import styled from "styled-components";
-
-const getHighContrastColor = (hex: string): string => {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-
-  // Luminance formula to determine if a color is light or dark
-  const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-
-  // If luminance is below the threshold, return white, otherwise return black for high contrast
-  return luminance < 128 ? "#FFFFFF" : "#000000";
-};
-
+import { getHighContrastColor } from "../../utils/stylesUtils";
 export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
