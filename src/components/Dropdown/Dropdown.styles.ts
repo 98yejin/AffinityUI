@@ -53,5 +53,6 @@ export const DropdownItem = styled.li`
   &:hover {
     background-color: ${({ theme }) =>
       theme?.colors?.hoverBackground || "#f0f0f0"};
+    color: ${({ theme }) => theme?.colors?.hoverColor || "#f0f0f0"};
   }
 `;
