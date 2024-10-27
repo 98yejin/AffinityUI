@@ -46,7 +46,7 @@ Welcome to our React-themed UI design framework! This library is aimed at provid
 
 ## Usage
 
-Here's a simple example of how to use our design components with the ThemeProvider:
+Here's a simple example of how to use design components with the ThemeProvider:
 
 ```tsx
 import React from "react";
@@ -60,8 +60,6 @@ const App = () => {
 
 export default App;
 ```
-
-## Components
 
 ### Header
 
@@ -126,4 +124,4 @@ You can easily add new themes or modify existing ones by editing the `themes.ts`
 
 ## Contact
 
-For any inquiries, questions, or contributions, feel free to reach out or open an issue on our GitHub repository.
+For any inquiries, questions, or contributions, feel free to reach out or open an issue on this GitHub repository.
