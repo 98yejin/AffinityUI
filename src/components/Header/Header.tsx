@@ -5,7 +5,6 @@ import {
   Nav,
   NavItem,
   HamburgerButton,
-  MobileMenu,
 } from "./Header.styles";
 
 interface HeaderProps {

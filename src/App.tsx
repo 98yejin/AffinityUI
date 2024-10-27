@@ -29,6 +29,12 @@ function App() {
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
   const [isToggled, setIsToggled] = useState(false);
   const [selectedValue, setSelectedValue] = useState("option1");
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 10;
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   const handleToggle = () => {
     setIsToggled((prev) => !prev);
@@ -150,7 +156,12 @@ function App() {
             onClose={() => console.log("closed")}
           />
           <HeaderText level={3}>Pagination</HeaderText>
-          <Pagination totalPages={5} currentPage={2} onPageChange={() => {}} />
+          <Pagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+            paginationSize={5}
+          />
           <HeaderText level={3}>RadioButton</HeaderText>
           <RadioButtonGroup
             options={[
