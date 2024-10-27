@@ -41,26 +41,11 @@ export const Nav = styled.nav<{ isMobileMenuOpen: boolean }>`
     flex-direction: column;
     position: absolute;
     top: 60px;
-    right: 16px;
-    background-color: ${({ theme }) => theme.colors.background};
+    right: 0px;
+    background-color: ${({ theme }) => theme.colors.primary};
     padding: 16px;
     border-radius: ${({ theme }) => theme.borderRadius};
     box-shadow: ${({ theme }) => theme.boxShadow};
-  }
-`;
-
-export const MobileMenu = styled.div`
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 16px;
-  background-color: ${({ theme }) => theme.colors.background};
-  padding: 16px;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    display: block;
   }
 `;
 
