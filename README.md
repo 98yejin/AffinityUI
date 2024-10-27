@@ -1,6 +1,6 @@
 # Design Framework: React-Themed UI Components
 
-Welcome to our React-themed UI design framework! This library is aimed at providing a collection of reusable, customizable, and company-specific UI components for building beautiful user interfaces with ease. Each component is designed to reflect the design principles and branding style of major tech companies such as Apple, Google, Microsoft, and more.
+Welcome to React-themed UI design framework! This library is aimed at providing a collection of reusable, customizable, and company-specific UI components for building beautiful user interfaces with ease. Each component is designed to reflect the design principles and branding style of major tech companies such as Apple, Google, Microsoft, and more.
 
 Please visit demo website > <https://company-eight-kappa.vercel.app/>
 
