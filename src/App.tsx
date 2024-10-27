@@ -18,6 +18,7 @@ import { TabPane, Tabs } from "./components/Tabs";
 import { AppThemeProvider } from "./themes";
 import ThemeSelector from "./ThemeSelector";
 import { MockHeader } from "./components/Header";
+import MockCard from "./components/Card/MockCard";
 
 function App() {
   const [isSingleChecked, setIsSingleChecked] = useState(false);
@@ -27,6 +28,7 @@ function App() {
     <AppThemeProvider>
       <MockHeader />
       <ThemeSelector />
+      <MockCard />
       <div style={{ padding: "20px" }}>
         <div style={{ padding: "20px" }}>
           {/* Button Component */}
