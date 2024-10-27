@@ -1,10 +1,11 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, CSSProperties } from "react";
 import styled from "styled-components";
 
 interface SpaceProps {
   children: ReactNode;
   direction?: "horizontal" | "vertical";
   size?: number;
+  style?: CSSProperties;
 }
 
 const SpaceContainer = styled.div<{
@@ -21,9 +22,10 @@ const Space: FC<SpaceProps> = ({
   children,
   direction = "horizontal",
   size = 8,
+  style,
 }) => {
   return (
-    <SpaceContainer direction={direction} size={size}>
+    <SpaceContainer direction={direction} size={size} style={style}>
       {React.Children.map(children, (child) => (
         <div>{child}</div>
       ))}

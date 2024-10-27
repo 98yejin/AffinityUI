@@ -22,6 +22,8 @@ export const MenuItem = styled.div<MenuItemProps>`
   align-items: center;
   justify-content: space-between;
   background-color: ${({ theme }) => theme?.colors?.background || "#fff"};
+  color: ${({ theme }) =>
+    getHighContrastColor(theme?.colors?.background) || "#f0f0f0"};
   border-radius: ${({ theme }) => theme?.borderRadius || "4px"};
   transition: background-color 0.3s ease;
   cursor: pointer;

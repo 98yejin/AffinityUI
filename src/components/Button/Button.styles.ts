@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { getHighContrastColor } from "../../utils/stylesUtils";
 
 interface StyledButtonProps {
   type?: "default" | "primary" | "link" | "text";
@@ -70,7 +71,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
         case "primary":
           return `${theme.colors.primary}D9`;
         case "default":
-          return "#f0f0f0";
+          return `${theme.colors.background}B3`;
         case "link":
         case "text":
           return "transparent";
@@ -78,7 +79,20 @@ export const StyledButton = styled.button<StyledButtonProps>`
           return "";
       }
     }};
-    color: ${({ theme, type }) =>
-      type === "link" ? "#0056b3" : theme.colors.text};
+    color: ${({ theme, type }) => {
+      switch (type) {
+        case "primary":
+          return getHighContrastColor(`${theme.colors.primary}D9`);
+        case "default":
+          return getHighContrastColor(`${theme.colors.background}B3`);
+        case "link":
+        case "text":
+          return "transparent";
+        default:
+          return "";
+      }
+    }};
   }
 `;
+
+// type === "link" ? "#0056b3" : theme.colors.text};
