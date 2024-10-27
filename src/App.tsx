@@ -39,7 +39,7 @@ function App() {
           <Card
             header="Card Header"
             body={<p>This is the card body content.</p>}
-            footer={<button>Learn More</button>}
+            footer={<Button>Learn More</Button>}
             imageUrl="https://via.placeholder.com/300"
           />
           <Card body={<p>Another card without an image or footer.</p>} />

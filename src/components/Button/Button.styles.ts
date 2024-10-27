@@ -81,9 +81,4 @@ export const StyledButton = styled.button<StyledButtonProps>`
     color: ${({ theme, type }) =>
       type === "link" ? "#0056b3" : theme.colors.text};
   }
-
-  &:focus {
-    outline: ${({ type }) =>
-      type === "link" || type === "text" ? "none" : "2px solid #0056b3"};
-  }
 `;
