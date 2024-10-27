@@ -17,6 +17,7 @@ export const DropdownHeader = styled.div`
   transition: all 0.3s ease-in-out;
   animation: ${fadeIn} 0.5s ease-out;
   background-color: ${({ theme }) => theme?.colors?.background || "#fff"};
+  color: ${({ theme }) => theme?.colors?.text || "#000"};
 
   &:focus {
     border-color: ${({ theme }) => theme?.colors?.primary || "#007bff"};
@@ -38,6 +39,7 @@ export const DropdownList = styled.ul`
   box-shadow: ${({ theme }) =>
     theme?.boxShadow || "0 4px 8px rgba(0, 0, 0, 0.1)"};
   background-color: ${({ theme }) => theme?.colors?.background || "#fff"};
+  color: ${({ theme }) => theme?.colors?.text || "#000"};
   max-height: 200px;
   overflow-y: auto;
   z-index: 1;

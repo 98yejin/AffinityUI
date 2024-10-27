@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef } from "react";
+import React, { FC, useState, useRef, useEffect } from "react";
 import {
   InputWrapper,
   DropdownHeader,
@@ -8,26 +8,41 @@ import {
 
 interface DropdownProps {
   options: string[];
+  value?: string | null;
+  onChange?: (value: string) => void;
   placeholder?: string;
   onSelect?: (value: string) => void;
 }
 
 const Dropdown: FC<DropdownProps> = ({
   options,
+  value,
+  onChange,
   placeholder = "Select an option",
   onSelect,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<string | null>(null);
+  const [selectedValue, setSelectedValue] = useState<string | null>(
+    value || null
+  );
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
 
   const handleOptionClick = (value: string) => {
-    setSelectedValue(value);
+    if (!onChange) {
+      setSelectedValue(value);
+    }
     setIsOpen(false);
-    onSelect && onSelect(value);
+    onChange?.(value);
+    onSelect?.(value);
   };
+
+  useEffect(() => {
+    if (value !== undefined) {
+      setSelectedValue(value);
+    }
+  }, [value]);
 
   return (
     <InputWrapper ref={dropdownRef}>
@@ -37,7 +52,11 @@ const Dropdown: FC<DropdownProps> = ({
       {isOpen && (
         <DropdownList>
           {options.map((option, index) => (
-            <DropdownItem key={index} onClick={() => handleOptionClick(option)}>
+            <DropdownItem
+              key={index}
+              onClick={() => handleOptionClick(option)}
+              aria-selected={selectedValue === option}
+            >
               {option}
             </DropdownItem>
           ))}
