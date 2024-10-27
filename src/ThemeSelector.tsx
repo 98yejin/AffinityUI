@@ -1,22 +1,51 @@
 import React from "react";
-import { Dropdown } from "./components/Dropdown";
 import { useTheme } from "./themes/ThemeProvider";
-import { themes } from "./themes/themes";
+import { Space } from "./components/Space";
+import { Button } from "./components/Button";
 
 const ThemeSelector: React.FC = () => {
   const { themeName, setThemeName } = useTheme();
 
-  const handleChange = (value: string) => {
-    setThemeName(value as keyof typeof themes);
-  };
-
   return (
-    <Dropdown
-      options={Object.keys(themes)}
-      value={themeName}
-      onChange={handleChange}
-      placeholder="Select a theme"
-    />
+    <Space
+      direction="vertical"
+      style={{ alignItems: "center", padding: "10%" }}
+    >
+      <Space direction="horizontal">
+        <Button type="primary" onClick={() => setThemeName("apple")}>
+          Apple
+        </Button>
+        <Button type="primary" onClick={() => setThemeName("google")}>
+          Google
+        </Button>
+        <Button type="primary" onClick={() => setThemeName("microsoft")}>
+          Microsoft
+        </Button>
+        <Button type="primary" onClick={() => setThemeName("airbnb")}>
+          Airbnb
+        </Button>
+        <Button type="primary" onClick={() => setThemeName("spotify")}>
+          Spotify
+        </Button>
+      </Space>
+      <Space direction="horizontal">
+        <Button type="primary" onClick={() => setThemeName("uber")}>
+          Uber
+        </Button>
+        <Button type="primary" onClick={() => setThemeName("notion")}>
+          Notion
+        </Button>
+        <Button type="primary" onClick={() => setThemeName("stripe")}>
+          Stripe
+        </Button>
+        <Button type="primary" onClick={() => setThemeName("netflix")}>
+          Netflix
+        </Button>
+        <Button type="primary" onClick={() => setThemeName("figma")}>
+          Figma
+        </Button>
+      </Space>
+    </Space>
   );
 };
 

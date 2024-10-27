@@ -26,8 +26,8 @@ function App() {
   return (
     <AppThemeProvider>
       <MockHeader />
+      <ThemeSelector />
       <div style={{ padding: "20px" }}>
-        <ThemeSelector />
         <div style={{ padding: "20px" }}>
           {/* Button Component */}
           <Button type="primary">primary button</Button>

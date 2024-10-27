@@ -87,7 +87,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
           return getHighContrastColor(`${theme.colors.background}B3`);
         case "link":
         case "text":
-          return "transparent";
+          const textColor = theme.colors.text || "#333";
+          const bgColor = theme.colors.background || "#e0e0e0";
+          return textColor === bgColor
+            ? getComplementaryColor(textColor)
+            : textColor;
         default:
           return "";
       }
