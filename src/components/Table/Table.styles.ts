@@ -10,17 +10,11 @@ export const TableHeader = styled.th`
   padding: 10px;
   border-bottom: 2px solid ${({ theme }) => theme?.colors?.border || "#e0e0e0"};
   text-align: left;
-  background-color: ${({ theme }) =>
-    theme?.colors?.headerBackground || "#f8f9fa"};
+  background-color: ${({ theme }) => theme?.colors?.background || "#f8f9fa"};
   font-weight: bold;
 `;
 
-export const TableRow = styled.tr`
-  &:nth-child(even) {
-    background-color: ${({ theme }) =>
-      theme?.colors?.rowBackground || "#f2f2f2"};
-  }
-`;
+export const TableRow = styled.tr``;
 
 export const TableCell = styled.td`
   padding: 10px;

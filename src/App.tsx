@@ -21,6 +21,8 @@ import { MockHeader } from "./components/Header";
 import MockCard from "./components/Card/MockCard";
 import CompanyPrinciples from "./components/CompanyPrinciple";
 import { Layout } from "./components/Layout";
+import { Space } from "./components/Space";
+import { HeaderText, Text } from "./components/Typography";
 
 function App() {
   const [isSingleChecked, setIsSingleChecked] = useState(false);
@@ -32,31 +34,29 @@ function App() {
       <Layout>
         <CompanyPrinciples />
         <ThemeSelector />
-        <div style={{ alignItems: "end" }}>
-          <MockCard />
-        </div>
-        <div style={{ padding: "20px" }}>
-          {/* Button Component */}
-          <Button type="primary">primary button</Button>
-          <Button type="default">default button</Button>
-          <Button type="text">text button</Button>
-          <Button type="link">link button</Button>
-
-          {/* Card Component */}
+        <MockCard />
+        <Space style={{ padding: "20px" }} direction="vertical">
+          <HeaderText level={2}>Components</HeaderText>
+          <HeaderText level={3}>Button</HeaderText>
+          <Space direction="horizontal">
+            <Button type="primary">primary button</Button>
+            <Button type="default">default button</Button>
+            <Button type="text">text button</Button>
+            <Button type="link">link button</Button>
+          </Space>
+          <HeaderText level={3}>Card</HeaderText>
           <Card
             header="Card Header"
             body={<p>This is the card body content.</p>}
             footer={<Button>Learn More</Button>}
           />
           <Card body={<p>Another card without an image or footer.</p>} />
-
-          {/* Checkbox Component */}
+          <HeaderText level={3}>Checkbox</HeaderText>
           <Checkbox
             label="Single Checkbox"
             isChecked={isSingleChecked}
             onChange={() => setIsSingleChecked((prev) => !prev)}
           />
-
           <CheckboxGroup
             options={[
               { label: "Option 1", value: "option1" },
@@ -66,8 +66,7 @@ function App() {
             selectedValues={selectedValues}
             onChange={setSelectedValues}
           />
-
-          {/* Dropdown Component */}
+          <HeaderText level={3}>Dropdown</HeaderText>
           <Dropdown
             options={["Option 1", "Option 2", "Option 3"]}
             placeholder="Choose an option"
@@ -75,8 +74,7 @@ function App() {
               console.log("Selected value:", value);
             }}
           />
-
-          {/* Form Component */}
+          <HeaderText level={3}>Form</HeaderText>
           <Form
             fields={[
               {
@@ -108,13 +106,11 @@ function App() {
               console.log("Form submitted:", formData);
             }}
           />
-          {/* Input Component */}
+          <HeaderText level={3}>Input</HeaderText>
           <Input placeholder="Enter text here" />
-
-          {/* Loading Spinner Component */}
+          <HeaderText level={3}>LoadingSpinner</HeaderText>
           <LoadingSpinner size="medium" />
-
-          {/* Menu Component */}
+          <HeaderText level={3}>Menu</HeaderText>
           <Menu
             menuItems={[
               {
@@ -135,37 +131,30 @@ function App() {
               console.log(`Selected: ${key}`);
             }}
           />
-
-          {/* Notification Component */}
+          <HeaderText level={3}>Notification</HeaderText>
           <Notification
             type="info"
             message="Information notification"
             onClose={() => console.log("closed")}
           />
-
-          {/* Pagination Component */}
+          <HeaderText level={3}>Pagination</HeaderText>
           <Pagination totalPages={5} currentPage={2} onPageChange={() => {}} />
-
-          {/* Radio Button Component */}
+          <HeaderText level={3}>RadioButton</HeaderText>
           <RadioButton label="Option 1" isChecked={false} onChange={() => {}} />
-
-          {/* Search Input Component */}
+          <HeaderText level={3}>SearchBar</HeaderText>
           <SearchBar
             placeholder="Search here..."
             onSearch={(value: string) => {
               console.log("Search value:", value);
             }}
           />
-
-          {/* Toggle Switch Component */}
+          <HeaderText level={3}>ToggleSwitch</HeaderText>
           <ToggleSwitch size="medium" isChecked={false} onChange={() => {}} />
-
-          {/* Tooltip Component */}
+          <HeaderText level={3}>Tooltip</HeaderText>
           <Tooltip position="top" content="Tooltip Text">
             Hover over me
           </Tooltip>
-
-          {/* Tabs Component */}
+          <HeaderText level={3}>Tabs</HeaderText>
           <Tabs>
             <TabPane label="Tab 1">
               <p>This is the content of Tab 1.</p>
@@ -174,8 +163,7 @@ function App() {
               <p>This is the content of Tab 2.</p>
             </TabPane>
           </Tabs>
-
-          {/* Table Component */}
+          <HeaderText level={3}>Table</HeaderText>
           <Table
             columns={[
               { key: "name", label: "Name" },
@@ -187,7 +175,7 @@ function App() {
             ]}
             rowsPerPage={5}
           />
-        </div>
+        </Space>
       </Layout>
     </AppThemeProvider>
   );

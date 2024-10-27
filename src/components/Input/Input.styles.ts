@@ -22,6 +22,8 @@ export const StyledInput = styled.input`
   border-radius: ${({ theme }) => theme?.borderRadius || "6px"};
   transition: all 0.3s ease-in-out;
   animation: ${fadeIn} 0.5s ease-out;
+  background: none;
+  color: ${({ theme }) => theme?.colors?.text || "#ccc"};
 
   &:focus {
     border-color: ${({ theme }) => theme?.colors?.primary || "#007bff"};

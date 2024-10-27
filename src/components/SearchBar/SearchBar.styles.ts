@@ -32,6 +32,8 @@ export const StyledInput = styled.input`
   border: none;
   font-size: 16px;
   outline: none;
+  background: none;
+  color: ${({ theme }) => theme?.colors?.text || "#ccc"};
 
   &::placeholder {
     color: ${({ theme }) => theme?.colors?.placeholder || "#aaa"};

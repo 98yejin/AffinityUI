@@ -4,6 +4,7 @@ import { useTheme } from "../themes/ThemeProvider";
 import { themes } from "../themes/themes";
 import { getHighContrastColor } from "../utils/stylesUtils";
 import { Space } from "./Space";
+import { Tooltip } from "./Tooltip";
 
 const Pre = styled.div`
   font-size: ${({ theme }) => theme.header.logoFontSize};
@@ -32,8 +33,10 @@ const PrincipleText = ({ text }: { text: string }) => {
       direction="vertical"
       style={{ padding: "5%", paddingBottom: 0, alignItems: "center" }}
     >
-      <Pre theme={theme}>{prePart}</Pre>
-      <Post theme={theme}>{postPart}</Post>
+      <Tooltip content="Principle" position="top">
+        <Pre theme={theme}>{prePart}</Pre>
+        <Post theme={theme}>{postPart}</Post>
+      </Tooltip>
     </Space>
   );
 };

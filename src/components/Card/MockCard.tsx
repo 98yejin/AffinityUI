@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { useTheme } from "../../themes";
 import { Space } from "../Space";
+import { Tooltip } from "../Tooltip";
 
 const MockCard: React.FC = () => {
   const { themeName } = useTheme();
@@ -66,7 +67,9 @@ const MockCard: React.FC = () => {
   return (
     <Space direction="vertical" style={{ alignItems: "end", padding: "1%" }}>
       {cardTexts.map((text, index) => (
-        <Card key={index} body={text} />
+        <Tooltip content={index === 0 ? "style" : "animation"} position="left">
+          <Card key={index} body={text} />
+        </Tooltip>
       ))}
     </Space>
   );
