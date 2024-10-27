@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { getHighContrastColor } from "../../utils/stylesUtils";
 
 export const MenuContainer = styled.div`
   width: 100%;
@@ -24,11 +25,10 @@ export const MenuItem = styled.div<MenuItemProps>`
   border-radius: ${({ theme }) => theme?.borderRadius || "4px"};
   transition: background-color 0.3s ease;
   cursor: pointer;
-
   &:hover {
-    background-color: ${({ theme }) =>
-      theme?.colors?.hoverBackground || "#f0f0f0"};
-    color: ${({ theme }) => theme?.colors?.hoverColor || "#f0f0f0"};
+    background-color: ${({ theme }) => theme?.colors?.primary || "#f0f0f0"};
+    color: ${({ theme }) =>
+      getHighContrastColor(theme?.colors?.primary) || "#f0f0f0"};
   }
 
   ${({ level }) =>
@@ -45,13 +45,11 @@ export const MenuItemWrapper = styled.div`
 export const MenuLabel = styled.span`
   font-weight: 500;
   font-size: 16px;
-  color: ${({ theme }) => theme?.colors?.text || "#333"};
 `;
 
 export const SubMenuContainer = styled.div`
   padding-left: 0;
-  background-color: ${({ theme }) =>
-    theme?.colors?.submenuBackground || "#f6f8fa"};
+  background-color: ${({ theme }) => theme?.colors?.background || "#f6f8fa"};
   border-radius: ${({ theme }) => theme?.borderRadius || "4px"};
 `;
 
