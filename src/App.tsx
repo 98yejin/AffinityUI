@@ -9,7 +9,7 @@ import { LoadingSpinner } from "./components/LoadingSpinner";
 import { Menu } from "./components/Menu";
 import { Notification } from "./components/Notification";
 import { Pagination } from "./components/Pagination";
-import { RadioButton } from "./components/RadioButton";
+import { RadioButtonGroup } from "./components/RadioButton";
 import { ToggleSwitch } from "./components/ToggleSwitch";
 import { Tooltip } from "./components/Tooltip";
 import { Table } from "./components/Table";
@@ -22,12 +22,17 @@ import MockCard from "./components/Card/MockCard";
 import CompanyPrinciples from "./components/CompanyPrinciple";
 import { Layout } from "./components/Layout";
 import { Space } from "./components/Space";
-import { HeaderText, Text } from "./components/Typography";
+import { HeaderText } from "./components/Typography";
 
 function App() {
   const [isSingleChecked, setIsSingleChecked] = useState(false);
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
+  const [isToggled, setIsToggled] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("option1");
 
+  const handleToggle = () => {
+    setIsToggled((prev) => !prev);
+  };
   return (
     <AppThemeProvider>
       <MockHeader />
@@ -48,7 +53,14 @@ function App() {
           <Card
             header="Card Header"
             body={<p>This is the card body content.</p>}
-            footer={<Button>Learn More</Button>}
+            footer={
+              <Button
+                type="primary"
+                onClick={() => window.open("https://www.google.com", "_blank")}
+              >
+                Learn More
+              </Button>
+            }
           />
           <Card body={<p>Another card without an image or footer.</p>} />
           <HeaderText level={3}>Checkbox</HeaderText>
@@ -140,7 +152,15 @@ function App() {
           <HeaderText level={3}>Pagination</HeaderText>
           <Pagination totalPages={5} currentPage={2} onPageChange={() => {}} />
           <HeaderText level={3}>RadioButton</HeaderText>
-          <RadioButton label="Option 1" isChecked={false} onChange={() => {}} />
+          <RadioButtonGroup
+            options={[
+              { label: "Option 1", value: "option1" },
+              { label: "Option 2", value: "option2", disabled: true },
+              { label: "Option 3", value: "option3" },
+            ]}
+            selectedValue={selectedValue}
+            onChange={setSelectedValue}
+          />
           <HeaderText level={3}>SearchBar</HeaderText>
           <SearchBar
             placeholder="Search here..."
@@ -149,7 +169,11 @@ function App() {
             }}
           />
           <HeaderText level={3}>ToggleSwitch</HeaderText>
-          <ToggleSwitch size="medium" isChecked={false} onChange={() => {}} />
+          <ToggleSwitch
+            size="medium"
+            isChecked={isToggled}
+            onChange={handleToggle}
+          />
           <HeaderText level={3}>Tooltip</HeaderText>
           <Tooltip position="top" content="Tooltip Text">
             Hover over me

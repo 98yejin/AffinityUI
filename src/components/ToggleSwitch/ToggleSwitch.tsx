@@ -12,9 +12,9 @@ interface ToggleSwitchProps {
 const ToggleSwitch: FC<ToggleSwitchProps> = ({
   isChecked,
   onChange,
+  onColor,
+  offColor,
   size = "medium",
-  onColor = "#4caf50",
-  offColor = "#ccc",
 }) => {
   return (
     <ToggleContainer size={size}>
