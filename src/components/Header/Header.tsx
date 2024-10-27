@@ -1,5 +1,12 @@
-import React from "react";
-import { HeaderContainer, Logo, Nav, NavItem } from "./Header.styles";
+import React, { useState } from "react";
+import {
+  HeaderContainer,
+  Logo,
+  Nav,
+  NavItem,
+  HamburgerButton,
+  MobileMenu,
+} from "./Header.styles";
 
 interface HeaderProps {
   logoText: string;
@@ -7,10 +14,17 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ logoText, navItems }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <HeaderContainer>
       <Logo>{logoText}</Logo>
-      <Nav>
+      <HamburgerButton onClick={toggleMobileMenu}>☰</HamburgerButton>
+      <Nav isMobileMenuOpen={isMobileMenuOpen}>
         {navItems.map((item, index) => (
           <NavItem key={index}>{item}</NavItem>
         ))}

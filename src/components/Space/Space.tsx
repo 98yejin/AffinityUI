@@ -16,6 +16,11 @@ const SpaceContainer = styled.div<{
   flex-direction: ${({ direction }) =>
     direction === "vertical" ? "column" : "row"};
   gap: ${({ size }) => size}px;
+  ${({ direction }) =>
+    direction === "horizontal" &&
+    `
+    flex-wrap: wrap; // Allow wrapping for horizontal direction
+  `}
 `;
 
 const Space: FC<SpaceProps> = ({

@@ -35,8 +35,8 @@ function App() {
   };
   return (
     <AppThemeProvider>
-      <MockHeader />
-      <Layout>
+      <Layout style={{ overflow: "auto" }}>
+        <MockHeader />
         <CompanyPrinciples />
         <ThemeSelector />
         <MockCard />

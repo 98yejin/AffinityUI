@@ -5,6 +5,7 @@ export const InputWrapper = styled.div`
   margin-bottom: 16px;
   position: relative;
   width: 100%;
+  max-width: 80vw;
 `;
 
 export const Label = styled.label`

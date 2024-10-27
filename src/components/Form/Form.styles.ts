@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FormContainer = styled.form`
   width: 100%;
-  max-width: 400px;
+  max-width: 80vw;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid ${({ theme }) => theme?.colors?.border || "#e0e0e0"};

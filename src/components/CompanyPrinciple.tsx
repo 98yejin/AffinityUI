@@ -31,7 +31,7 @@ const PrincipleText = ({ text }: { text: string }) => {
   return (
     <Space
       direction="vertical"
-      style={{ padding: "5%", paddingBottom: 0, alignItems: "center" }}
+      style={{ padding: "10%", paddingBottom: "5%", alignItems: "center" }}
     >
       <Tooltip content="Principle" position="top">
         <Pre theme={theme}>{prePart}</Pre>

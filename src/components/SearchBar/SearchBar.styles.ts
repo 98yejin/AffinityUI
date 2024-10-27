@@ -4,7 +4,7 @@ import { fadeIn } from "../../styles/animations";
 export const InputWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 80vw;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
