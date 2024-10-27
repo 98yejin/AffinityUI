@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface StyledButtonProps {
-  variant?: "default" | "primary" | "link" | "text";
+  type?: "default" | "primary" | "link" | "text";
 }
 
 const getComplementaryColor = (hex: string): string => {
@@ -20,8 +20,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: inline-block;
   width: auto;
   padding: 10px 20px;
-  background-color: ${({ theme, variant }) => {
-    switch (variant) {
+  background-color: ${({ theme, type }) => {
+    switch (type) {
       case "primary":
         return theme.colors.primary;
       case "link":
@@ -32,8 +32,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
         return theme.colors.background || "#e0e0e0";
     }
   }};
-  color: ${({ theme, variant }) => {
-    switch (variant) {
+  color: ${({ theme, type }) => {
+    switch (type) {
       case "primary":
         return "#ffffff";
       case "link":
@@ -49,8 +49,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
         return theme.colors.text || "#333";
     }
   }};
-  border: ${({ theme, variant }) => {
-    switch (variant) {
+  border: ${({ theme, type }) => {
+    switch (type) {
       case "default":
         return `1px solid ${theme.colors.border || "#ccc"}`;
       case "primary":
@@ -65,8 +65,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: ${({ theme, variant }) => {
-      switch (variant) {
+    background-color: ${({ theme, type }) => {
+      switch (type) {
         case "primary":
           return `${theme.colors.primary}D9`;
         case "default":
@@ -78,12 +78,12 @@ export const StyledButton = styled.button<StyledButtonProps>`
           return "";
       }
     }};
-    color: ${({ theme, variant }) =>
-      variant === "link" ? "#0056b3" : theme.colors.text};
+    color: ${({ theme, type }) =>
+      type === "link" ? "#0056b3" : theme.colors.text};
   }
 
   &:focus {
-    outline: ${({ variant }) =>
-      variant === "link" || variant === "text" ? "none" : "2px solid #0056b3"};
+    outline: ${({ type }) =>
+      type === "link" || type === "text" ? "none" : "2px solid #0056b3"};
   }
 `;

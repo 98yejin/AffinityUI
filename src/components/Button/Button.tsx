@@ -4,17 +4,17 @@ import { StyledButton } from "./Button.styles";
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: "default" | "primary" | "link" | "text";
+  type?: "default" | "primary" | "link" | "text";
 }
 
 const Button: FC<ButtonProps> = ({
   children,
   onClick,
-  variant = "default",
+  type = "default",
   ...props
 }) => {
   return (
-    <StyledButton onClick={onClick} variant={variant} {...props}>
+    <StyledButton onClick={onClick} type={type} {...props}>
       {children}
     </StyledButton>
   );

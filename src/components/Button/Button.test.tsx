@@ -21,13 +21,13 @@ describe("Button Component", () => {
 
   // Test case to check if button has correct variant styling
   it("should apply primary variant styles", () => {
-    render(<Button variant="primary">Primary Button</Button>);
+    render(<Button type="primary">Primary Button</Button>);
     const buttonElement = screen.getByText(/primary button/i);
     expect(buttonElement).toHaveStyle("background-color: #007bff");
   });
 
   it("should apply default variant styles", () => {
-    render(<Button variant="default">Default Button</Button>);
+    render(<Button type="default">Default Button</Button>);
     const buttonElement = screen.getByText(/default button/i);
     expect(buttonElement).toHaveStyle("background-color: #6c757d");
   });
