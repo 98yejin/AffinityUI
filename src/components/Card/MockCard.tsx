@@ -58,6 +58,11 @@ const MockCard: React.FC = () => {
           "Collaborative, precise, real-time.",
           "Instant feedback, collaborative indicator movements, hover effects for UI exploration.",
         ];
+      case "slack":
+        return [
+          "Collaborative, intuitive, approachable",
+          "Subtle hover effects, smooth content fades, gentle pop-ins to guide user attention without overwhelming.",
+        ];
       default:
         return ["Default style.", "Default animations."];
     }

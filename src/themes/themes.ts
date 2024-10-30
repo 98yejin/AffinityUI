@@ -219,4 +219,26 @@ export const themes = {
       navItemFontSize: "18px",
     },
   },
+  slack: {
+    colors: {
+      primary: "#611f69",
+      background: "#f4ede4",
+      text: "#1d1c1d",
+      success: "#2eb67d",
+      error: "#e01e5a",
+      warning: "#ecb22e",
+      info: "#1264a3",
+      hoverBackground: "#350d36",
+      hoverColor: "#FFFFFF",
+    },
+    border: "1px solid #e8e6e4",
+    borderRadius: "6px",
+    font: "Lato, Helvetica, Arial, sans-serif",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+    header: {
+      logoFontSize: "22px",
+      navGap: "20px",
+      navItemFontSize: "16px",
+    },
+  },
 };

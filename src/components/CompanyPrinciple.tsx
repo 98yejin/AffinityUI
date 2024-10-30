@@ -64,6 +64,8 @@ const CompanyPrinciples: React.FC = () => {
       "Stories that move you—immersive entertainment that connects people to the content they love.",
     figma:
       "Design together, from anywhere—real-time collaboration for every idea, big or small.",
+    slack:
+      "Where work happens—bringing teams together in a productive and enjoyable way.",
   };
 
   const principleText = principles[themeName] || "Default Principle";

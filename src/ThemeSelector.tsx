@@ -46,6 +46,9 @@ const ThemeSelector: React.FC = () => {
       <Button type="primary" onClick={() => setThemeName("figma")}>
         Figma
       </Button>
+      <Button type="primary" onClick={() => setThemeName("slack")}>
+        Slack
+      </Button>
     </Space>
   );
 };
