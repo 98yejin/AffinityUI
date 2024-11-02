@@ -1,7 +1,7 @@
 {
-  "name": "company",
+  "name": "affinity-ui",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
@@ -45,5 +45,21 @@
     "@testing-library/react": "^16.0.1",
     "@types/styled-components-react-native": "^5.2.5",
     "jest": "^27.5.1"
-  }
+  },
+  "description": "Welcome to React-themed UI design framework! This library is aimed at providing a collection of reusable, customizable, and company-specific UI components for building beautiful user interfaces with ease. Each component is designed to reflect the design principles and branding style of major tech companies such as Apple, Google, Microsoft, and more.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/98yejin/company.git"
+  },
+  "keywords": [
+    "ui",
+    "components"
+  ],
+  "author": "98yejin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/98yejin/company/issues"
+  },
+  "homepage": "https://github.com/98yejin/company#readme"
 }

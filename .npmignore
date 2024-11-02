@@ -1,0 +1,10 @@
+node_modules/
+documentation/
+public/
+src/App.css
+src/App.test.tsx
+src/App.tsx
+src/index.css
+src/index.tsx
+.gitignore
+README.md
